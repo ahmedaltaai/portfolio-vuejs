@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
   <main class="scroller projects__view">
     <div class="image">
       <img src="../assets/Group 11-0.svg" alt="" />
@@ -78,9 +77,3 @@ export default {
   }
 }
 </style>
-=======
-  <div class="projects">
-    <h1>This is projects page</h1>
-  </div>
-</template>
->>>>>>> f512a6d1e4cbf7d5ea6f6ae9ffce11962668cb28
