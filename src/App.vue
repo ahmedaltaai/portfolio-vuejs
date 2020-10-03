@@ -45,6 +45,14 @@ main {
   display: none;
 }
 
+button:focus {
+  outline: none;
+}
+
+a:focus {
+  outline: none;
+}
+
 .home__view {
   height: 93vh;
   display: flex;

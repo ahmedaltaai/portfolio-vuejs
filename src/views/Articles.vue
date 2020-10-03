@@ -1,11 +1,11 @@
 <template>
   <main class="articles__view">
     <div class="buttons">
-      <button @click="mediumActive" class="medium">
+      <button @click="blog" class="blog">
         <i class="fab fa-blogger-b"></i>
         BLOGS
       </button>
-      <button @click="youtubeActive" class="youtube">
+      <button @click="youtube" class="youtube">
         <i class="fab fa-youtube"></i>
         VIDEOS
       </button>
@@ -16,46 +16,37 @@
 
 <script>
 // @ is an alias to /src
+import Blog from '@/components/Blog'
 import Youtube from '@/components/Youtube'
-import Medium from '@/components/Medium'
 
 export default {
   name: 'Home',
   components: {
-    Youtube,
-    Medium
+    Blog,
+    Youtube
   },
   data() {
     return {
-      component: 'Medium'
+      component: 'Blog'
     }
   },
   methods: {
     // to be continued... I will use computed rather than methods
-    mediumActive() {
-      if (this.component === 'Youtube') {
-        this.component = 'Medium'
-        document.querySelector('.youtube').classList.remove('active')
-        document.querySelector('.medium').classList.add('active')
-      }
+    blog() {
+      this.component = 'Blog'
+      document.querySelector('.youtube').classList.remove('active')
+      document.querySelector('.blog').classList.add('active')
     },
-    youtubeActive() {
-      if (this.component === 'Medium') {
-        this.component = 'Youtube'
-        document.querySelector('.medium').classList.remove('active')
-        document.querySelector('.youtube').classList.add('active')
-      }
+    youtube() {
+      this.component = 'Youtube'
+      document.querySelector('.blog').classList.remove('active')
+      document.querySelector('.youtube').classList.add('active')
     }
   },
-  created() {
-    if (this.component === 'Medium') {
-      document.querySelector('.medium').classList.add('active')
+  mounted() {
+    if (this.component === 'Blog') {
+      document.querySelector('.blog').classList.add('active')
     }
-    fetch(
-      'https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails&id=UCM9Bztd3u_y5Nyqbmg9d4Ow&key=AIzaSyB217WFq3rtxL8q7BmHX0UA39yyvyt2qIM'
-    )
-      .then(res => res.JSON())
-      .then(data => console.log(data))
   }
 }
 </script>

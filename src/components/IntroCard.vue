@@ -2,13 +2,13 @@
   <article class="card">
     <section class="intro">
       <h1>
-        Hi, I'm Ahmed
+        Hi, <br />
+        I'm Ahmed, <br />
+        Keyboard Warrior.
       </h1>
-      <p>
-        I am a keyboard warrior and in love with the wide range of possibilites
-        and oppertunities in tech. <br />
-        From software to hardware.
-      </p>
+      <router-link to="/projects" class="link-to-projects">
+        PROJECTS
+      </router-link>
     </section>
     <section class="links">
       <a href="#">
@@ -40,26 +40,22 @@ export default {
   box-shadow: 10px 10px 20px #31343a, -10px -10px 20px #3b3e46;
   padding: 2em;
   width: 80%;
-  height: 20em;
   color: #ddd;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
 
   .intro {
     h1 {
       font-size: 1.8em;
-    }
-
-    p {
-      margin-top: 0.5em;
-      color: #eee;
+      margin-bottom: 1em;
     }
   }
 
   .links {
     display: flex;
     justify-content: space-evenly;
+    margin-top: 3em;
 
     a {
       text-decoration: none;
@@ -87,19 +83,18 @@ export default {
     }
   }
 
-  button {
-    width: 50%;
-    height: 100%;
+  .link-to-projects {
     border: 1px solid #42b983;
-    color: #ddd;
+    color: #42b983;
     background-color: transparent;
     padding: 0.5em 1em;
-    cursor: pointer;
     font-weight: 600;
     font-size: 1.2em;
+    text-decoration: none;
 
     &:hover {
       background-color: #42b983;
+      color: #363940;
       transition-duration: 300ms;
     }
 
@@ -109,9 +104,51 @@ export default {
   }
 }
 
+@media (min-width: 43em) {
+  .card {
+    max-width: 60%;
+    flex-direction: row;
+
+    .intro {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      h1 {
+        font-size: 2em;
+      }
+    }
+
+    .links {
+      flex-direction: column;
+      margin-top: 0;
+    }
+
+    .link-to-projects {
+      width: 50%;
+    }
+  }
+}
+
 @media (min-width: 64em) {
   .card {
-    width: 40%;
+    max-width: 50%;
+    flex-direction: row;
+    padding: 6em;
+
+    .intro {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      h1 {
+        font-size: 2em;
+      }
+    }
+
+    .links {
+      flex-direction: column;
+    }
   }
 }
 </style>
