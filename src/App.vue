@@ -1,10 +1,19 @@
 <template>
+<<<<<<< HEAD
   <div id="app" class="scroller">
     <Navbar />
+=======
+  <div id="app">
+    <div id="nav">
+      <router-link to="/">Home</router-link>|
+      <router-link to="/projects">Projects</router-link>
+    </div>
+>>>>>>> f512a6d1e4cbf7d5ea6f6ae9ffce11962668cb28
     <router-view />
   </div>
 </template>
 
+<<<<<<< HEAD
 <script>
 import Navbar from '@/components/Navbar'
 
@@ -75,6 +84,27 @@ a:focus {
   }
   .projects__view {
     height: 93vh;
+=======
+<style lang="scss">
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+#nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+>>>>>>> f512a6d1e4cbf7d5ea6f6ae9ffce11962668cb28
   }
 }
 </style>

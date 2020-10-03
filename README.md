@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # portfolio-vue
+=======
+# portfolio-vuejs
+>>>>>>> f512a6d1e4cbf7d5ea6f6ae9ffce11962668cb28
 
 ## Project setup
 ```
