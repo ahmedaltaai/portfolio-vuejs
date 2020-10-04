@@ -17,22 +17,43 @@
       <a href="#">
         <i class="fab fa-twitter"></i>
       </a>
-      <a href="#">
-        <i class="fas fa-envelope"></i>
-      </a>
+      <button
+        type="button"
+        href="#"
+        @click="showModal"
+        class="fas fa-envelope"
+      ></button>
     </section>
+    <modal v-show="isModalVisible" @close="closeModal" />
   </article>
 </template>
 
 <script>
+import modal from '@/components/Modal'
+
 export default {
-  name: 'IntroCard'
+  name: 'IntroCard',
+  components: {
+    modal
+  },
+  data() {
+    return {
+      isModalVisible: false
+    }
+  },
+  methods: {
+    showModal() {
+      this.isModalVisible = true
+    },
+    closeModal() {
+      this.isModalVisible = false
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 .card {
-  position: relative;
   // background-color: #212226;
   // box-shadow: 0 0 5px 5px #31333a;
   // box-shadow: 5px 5px 10px #31343a, -5px -5px 10px #3b3e46;
@@ -44,6 +65,20 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  button {
+    border: none;
+    background-color: transparent;
+
+    font-size: 2em;
+    cursor: pointer;
+    color: #ddd;
+
+    &:hover {
+      color: #ffc558;
+      transition-duration: 250ms;
+    }
+  }
 
   .intro {
     h1 {

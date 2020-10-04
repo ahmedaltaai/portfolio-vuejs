@@ -59,10 +59,13 @@ export default {
   // requesting the repos from the GitHub API at creation
   // with the JavaScript fetch API
   created() {
-    fetch('https://api.github.com/users/ahmedaltaai/repos')
+    fetch(
+      'https://api.github.com/users/ahmedaltaai/repos?type=public?sort=ascending'
+    )
       .then(res => res.json())
       .then(data => {
         this.repos = data
+        // console.log(data)
       })
   },
   // while mounted update the tag color of the displayed language

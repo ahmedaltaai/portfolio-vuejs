@@ -6,6 +6,7 @@
           <img src="@/assets/logo.png" alt />
         </router-link>
       </figure>
+      <i class="fas fa-bars" @click="showNav = !showNav"></i>
       <ul>
         <li>
           <router-link to="/">
@@ -31,7 +32,14 @@
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'Navbar',
+  data() {
+    return {
+      showNav: false
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -45,7 +53,13 @@ export default {}
   justify-content: space-between;
   height: 7vh;
   background-color: #2a2b2f;
-  padding: 0 6em;
+  padding: 0 1em;
+
+  .fa-bars {
+    font-size: 2em;
+    color: #ddd;
+    cursor: pointer;
+  }
 
   figure {
     cursor: pointer;
@@ -58,6 +72,16 @@ export default {}
   ul {
     list-style-type: none;
     display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 20vh;
+    width: 50%;
+
+    position: absolute;
+
+    top: 10vh;
+    right: 1em;
 
     li {
       a {

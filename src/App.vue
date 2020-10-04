@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="scroller">
+  <div id="app" class="scroller" :class="{ open: showNav }">
     <Navbar />
     <router-view />
   </div>
@@ -33,7 +33,7 @@ body {
 
 main {
   background-color: #363940;
-  margin-top: 5vh;
+  margin-top: 7vh;
 }
 
 ::-webkit-scrollbar {
@@ -59,6 +59,11 @@ main {
 
 .articles__view {
   height: 93vh;
+}
+
+.open {
+  transform: translateX(-50%);
+  transition-duration: 300ms;
 }
 
 @media (min-width: 43em) {
