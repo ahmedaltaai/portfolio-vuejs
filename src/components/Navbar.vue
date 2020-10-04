@@ -118,7 +118,6 @@ export default {
   }
 
   .slideOpen {
-    // transform: translateX(-100%);
     transition-duration: 300ms;
     right: 0;
   }
@@ -126,6 +125,21 @@ export default {
   .slideBack {
     transition-duration: 300ms;
     right: -100%;
+  }
+}
+
+@media (min-width: 43em) {
+  ul {
+    list-style-type: none;
+    justify-content: flex-end !important;
+
+    position: relative !important;
+    right: 0 !important;
+    top: 0 !important;
+  }
+
+  .fa-bars {
+    display: none;
   }
 }
 </style>
