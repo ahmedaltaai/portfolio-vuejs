@@ -1,6 +1,8 @@
 <template>
   <main class="articles__view">
-    <div class="buttons">
+    <!-- connecting dynamic classes to move the buttons up and down -->
+    <!-- when the side nav slides open/back -->
+    <div class="buttons" :class="{ down: margin, up: !margin }">
       <button @click="blog" class="blog">
         <i class="fab fa-blogger-b"></i>
         BLOGS
@@ -18,6 +20,7 @@
 // @ is an alias to /src
 import Blog from '@/components/Blog'
 import Youtube from '@/components/Youtube'
+import { bus } from '../main'
 
 export default {
   name: 'Home',
@@ -27,11 +30,23 @@ export default {
   },
   data() {
     return {
-      component: 'Blog'
+      component: 'Blog',
+      margin: false
+    }
+  },
+  created() {
+    // created an event bus to grab the boolean
+    // value from the navbar component
+    bus.$on('opened', data => {
+      this.margin = data
+    })
+  },
+  mounted() {
+    if (this.component === 'Blog') {
+      document.querySelector('.blog').classList.add('active')
     }
   },
   methods: {
-    // to be continued... I will use computed rather than methods
     blog() {
       this.component = 'Blog'
       document.querySelector('.youtube').classList.remove('active')
@@ -42,16 +57,21 @@ export default {
       document.querySelector('.blog').classList.remove('active')
       document.querySelector('.youtube').classList.add('active')
     }
-  },
-  mounted() {
-    if (this.component === 'Blog') {
-      document.querySelector('.blog').classList.add('active')
-    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.down {
+  margin-top: 13.3vh;
+  transition-duration: 100ms;
+}
+
+.up {
+  margin-top: 0;
+  transition-duration: 1000ms;
+}
+
 .buttons {
   display: flex;
   width: 100%;
