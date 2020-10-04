@@ -1,16 +1,16 @@
 <template>
-  <div id="app" class="scroller" :class="{ open: showNav }">
-    <Navbar />
+  <div id="app" class="scroller">
+    <navbar />
     <router-view />
   </div>
 </template>
 
 <script>
-import Navbar from '@/components/Navbar'
+import navbar from '@/components/Navbar'
 
 export default {
   components: {
-    Navbar
+    navbar
   }
 }
 </script>
@@ -59,11 +59,6 @@ main {
 
 .articles__view {
   height: 93vh;
-}
-
-.open {
-  transform: translateX(-50%);
-  transition-duration: 300ms;
 }
 
 @media (min-width: 43em) {

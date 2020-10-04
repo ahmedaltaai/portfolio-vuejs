@@ -6,8 +6,8 @@
           <img src="@/assets/logo.png" alt />
         </router-link>
       </figure>
-      <i class="fas fa-bars" @click="showNav = !showNav"></i>
-      <ul>
+      <i class="fas fa-bars" @click="openNav"></i>
+      <ul :class="{ slideOpen: showNav, slideBack: !showNav }">
         <li>
           <router-link to="/">
             <i class="fas fa-home"></i>
@@ -37,6 +37,16 @@ export default {
   data() {
     return {
       showNav: false
+    }
+  },
+  methods: {
+    openNav() {
+      this.showNav = !this.showNav
+    }
+  },
+  watch: {
+    $route: function() {
+      this.showNav = false
     }
   }
 }
@@ -72,16 +82,14 @@ export default {
   ul {
     list-style-type: none;
     display: flex;
-    flex-direction: column;
     align-items: flex-end;
     justify-content: space-between;
-    height: 20vh;
-    width: 50%;
+    width: 100%;
 
     position: absolute;
 
-    top: 10vh;
-    right: 1em;
+    top: 9vh;
+    right: -100%;
 
     li {
       a {
@@ -107,6 +115,17 @@ export default {
         }
       }
     }
+  }
+
+  .slideOpen {
+    // transform: translateX(-100%);
+    transition-duration: 300ms;
+    right: 0;
+  }
+
+  .slideBack {
+    transition-duration: 300ms;
+    right: -100%;
   }
 }
 </style>
