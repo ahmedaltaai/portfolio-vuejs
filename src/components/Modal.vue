@@ -246,6 +246,27 @@ export default {
       background: transparent;
     }
   }
+
+  footer {
+    justify-content: flex-end;
+    padding: 0em 1em 1em 1em;
+
+    .send-btn {
+      color: #42b983;
+      background: transparent;
+      border: 1px solid #42b983;
+      padding: 0.5em 1em;
+      width: 30%;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 1.2em;
+
+      &:hover {
+        background-color: #42b983;
+        color: #3a3d44;
+      }
+    }
+  }
 }
 
 .modal-body {
@@ -279,27 +300,6 @@ export default {
       padding: 1em;
       background-color: #3a3d44;
       color: #fff;
-    }
-  }
-}
-
-footer {
-  justify-content: flex-end;
-  padding: 0em 1em 1em 1em;
-
-  .send-btn {
-    color: #42b983;
-    background: transparent;
-    border: 1px solid #42b983;
-    padding: 0.5em 1em;
-    width: 30%;
-    cursor: pointer;
-    font-weight: 500;
-    font-size: 1.2em;
-
-    &:hover {
-      background-color: #42b983;
-      color: #3a3d44;
     }
   }
 }
