@@ -131,17 +131,21 @@ export default {
 }
 
 @media (min-width: 43em) {
-  ul {
-    list-style-type: none;
-    justify-content: flex-end !important;
+  .navbar {
+    padding: 0 1em 0 2em;
 
-    position: relative !important;
-    right: 0 !important;
-    top: 0 !important;
-  }
+    ul {
+      list-style-type: none;
+      justify-content: flex-end !important;
 
-  .fa-bars {
-    display: none;
+      position: relative !important;
+      right: 0 !important;
+      top: 0 !important;
+    }
+
+    .fa-bars {
+      display: none;
+    }
   }
 }
 </style>
