@@ -10,7 +10,7 @@
             {{ repo.name }}
           </div>
           <div class="lang">
-            <span class="tag"></span>
+            <span></span>
             <div>
               {{ repo.language }}
             </div>
@@ -70,13 +70,15 @@ export default {
   },
   // while mounted update the tag color of the displayed language
   updated() {
-    // grab the elements and cycle through them
-    // with a for-loop then use if and else if statements
-    // to decide which language gets which color
-    // with 'tag' you can access the individual nodes within
-    // the grabed element
-
+    // grab the all element of the language tag
     let lang = document.querySelectorAll('.lang')
+
+    // and cycle through them
+    // with a for-of loop then use if and else if statements
+    // to decide which language gets which color
+    // with 'tag' you can access the individual nodes
+    // within the grabed element
+
     for (let tag of lang) {
       if (tag.innerText === 'PHP') {
         tag.firstChild.style.backgroundColor = '#4F5D95'
@@ -87,7 +89,7 @@ export default {
       } else if (tag.innerText === 'CSS') {
         tag.firstChild.style.backgroundColor = '#563d7c'
       } else if (tag.innerText === 'C') {
-        tag.firstChild.style.backgroundColor = '#4F5D95'
+        tag.firstChild.style.backgroundColor = '#f34b7d'
       } else if (tag.innerText === 'C++') {
         tag.firstChild.style.backgroundColor = '#b07219'
       } else if (tag.innerText === 'Java') {
@@ -134,7 +136,6 @@ export default {
           width: 0.8em;
           height: 0.8em;
           border-radius: 50%;
-          background-color: #4f5d95;
           margin-right: 0.5em;
         }
       }
