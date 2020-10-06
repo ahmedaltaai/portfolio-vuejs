@@ -5,7 +5,33 @@
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'blog',
+  data() {
+    return {
+      blogs: []
+    }
+  },
+  created() {
+    fetch('https://api.hashnode.com', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        query:
+          '{ user(username: "titanium"){publication{posts {title cuid coverImage brief} }}}'
+      })
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        // this.blogs = data
+      })
+    console.log(this.blogs)
+  },
+  mounted() {
+    console.log(this.blogs)
+  }
+}
 </script>
 
 <style lang="scss" scoped>
