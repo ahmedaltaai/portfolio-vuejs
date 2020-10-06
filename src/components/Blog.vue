@@ -28,7 +28,7 @@ export default {
   apollo: {
     user: gql`
       query {
-        user(username: "catalinpit") {
+        user(username: "ahmedaltaai") {
           publication {
             posts {
               coverImage
