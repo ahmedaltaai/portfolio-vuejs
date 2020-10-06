@@ -1,44 +1,115 @@
 <template>
-  <article class="projects__container">
-    <h1>MEDIUM</h1>
+  <article class="publications__container">
+    <section
+      v-for="post in user.publication.posts"
+      :key="post.cuid"
+      class="card"
+    >
+      <div class="cover-image">
+        <img :src="post.coverImage" />
+      </div>
+      <div class="text">
+        <div class="title">
+          <a :href="`https://ahmeds.tech/${post.slug}`">{{ post.title }}</a>
+        </div>
+        <div class="description">
+          <p>{{ post.brief }}</p>
+        </div>
+      </div>
+    </section>
   </article>
 </template>
 
 <script>
+import gql from 'graphql-tag'
+
 export default {
   name: 'blog',
-  data() {
-    return {
-      blogs: []
-    }
-  },
-  created() {
-    fetch('https://api.hashnode.com', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        query:
-          '{ user(username: "titanium"){publication{posts {title cuid coverImage brief} }}}'
-      })
-    })
-      .then(res => res.json())
-      .then(data => {
-        console.log(data)
-        // this.blogs = data
-      })
-    console.log(this.blogs)
-  },
-  mounted() {
-    console.log(this.blogs)
+  apollo: {
+    user: gql`
+      query {
+        user(username: "catalinpit") {
+          publication {
+            posts {
+              coverImage
+              title
+              brief
+              slug
+              cuid
+            }
+          }
+        }
+      }
+    `
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.projects__container {
+.publications__container {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   margin: 0 auto;
   width: 90%;
+
+  .card {
+    width: 100%;
+    margin: 1em 0;
+    background-color: #212226;
+    box-shadow: 0px 5px 15px 1px #222;
+
+    &:hover {
+      transform: translateY(-2%);
+      transition-duration: 300ms;
+    }
+
+    .cover-image {
+      img {
+        width: 100%;
+        object-fit: fill;
+      }
+    }
+
+    .text {
+      padding: 1em;
+      .title {
+        a {
+          text-decoration: none;
+          color: #ddd;
+          font-size: 1.2em;
+        }
+        font-weight: 600;
+      }
+
+      .description {
+        margin-top: 1em;
+        color: #aaa;
+      }
+    }
+  }
+}
+
+@media (min-width: 46em) {
+  .publications__container {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .card {
+      width: 45%;
+      margin: 2em 1em;
+    }
+  }
+}
+
+@media (min-width: 66em) {
+  .publications__container {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+
+    .card {
+      width: 30%;
+      margin: 2em 1em;
+    }
+  }
 }
 </style>
