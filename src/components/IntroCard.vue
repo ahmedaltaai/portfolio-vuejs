@@ -54,9 +54,6 @@ export default {
 
 <style lang="scss" scoped>
 .card {
-  // background-color: #212226;
-  // box-shadow: 0 0 5px 5px #31333a;
-  // box-shadow: 5px 5px 10px #31343a, -5px -5px 10px #3b3e46;
   background: linear-gradient(145deg, #31333a, #3a3d44);
   box-shadow: 10px 10px 20px #31343a, -10px -10px 20px #3b3e46;
   padding: 2em;
