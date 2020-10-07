@@ -17,38 +17,38 @@
       <a href="#">
         <i class="fab fa-twitter"></i>
       </a>
-      <button
+      <!-- <button
         type="button"
         href="#"
         @click="showModal"
         class="fas fa-envelope"
-      ></button>
+      ></button> -->
     </section>
-    <modal v-show="isModalVisible" @close="closeModal" />
+    <!-- <modal v-show="isModalVisible" @close="closeModal" /> -->
   </article>
 </template>
 
 <script>
-import modal from '@/components/Modal'
+// import modal from '@/components/Modal'
 
 export default {
   name: 'IntroCard',
   components: {
-    modal
-  },
-  data() {
-    return {
-      isModalVisible: false
-    }
-  },
-  methods: {
-    showModal() {
-      this.isModalVisible = true
-    },
-    closeModal() {
-      this.isModalVisible = false
-    }
+    // modal
   }
+  // data() {
+  //   return {
+  //     isModalVisible: false
+  //   }
+  // },
+  // methods: {
+  //   showModal() {
+  //     this.isModalVisible = true
+  //   },
+  //   closeModal() {
+  //     this.isModalVisible = false
+  //   }
+  // }
 }
 </script>
 
