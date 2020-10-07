@@ -77,6 +77,10 @@ export default {
           text-decoration: none;
           color: #ddd;
           font-size: 1.2em;
+
+          &:hover {
+            color: #42b983;
+          }
         }
         font-weight: 600;
       }
