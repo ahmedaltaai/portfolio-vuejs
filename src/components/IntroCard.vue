@@ -11,12 +11,39 @@
       </router-link>
     </section>
     <section class="links">
-      <a href="#">
+      <a href="https://github.com/ahmedaltaai">
         <i class="fab fa-github"></i>
       </a>
-      <a href="#">
+      <a href="https://twitter.com/realAhmedAltaai">
         <i class="fab fa-twitter"></i>
       </a>
+      <a href="https://ahmeds.tech/">
+        <svg
+          version="1.1"
+          id="Layer_1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          x="0px"
+          y="0px"
+          viewBox="0 0 337 337"
+          style="enable-background:new 0 0 337 337;"
+          xml:space="preserve"
+        >
+          <path
+            class="st0"
+            d="M168.5,113L168.5,113c30.7,0,55.5,24.8,55.5,55.5l0,0c0,30.7-24.8,55.5-55.5,55.5l0,0
+	c-30.7,0-55.5-24.8-55.5-55.5l0,0C113,137.8,137.8,113,168.5,113z"
+          />
+          <path
+            class="st1"
+            d="M23.2,112.6c-30.9,30.9-30.9,80.9,0,111.8l89.4,89.4c30.9,30.9,80.9,30.9,111.8,0l89.4-89.4
+	c30.9-30.9,30.9-80.9,0-111.8l-89.4-89.4c-30.9-30.9-80.9-30.9-111.8,0C112.6,23.2,23.2,112.6,23.2,112.6z M207.6,207.6
+	c21.6-21.6,21.6-56.7,0-78.3c-21.6-21.6-56.7-21.6-78.3,0c-21.6,21.6-21.6,56.7,0,78.3C151,229.2,186,229.2,207.6,207.6L207.6,207.6
+	z"
+          />
+        </svg>
+      </a>
+
       <!-- <button
         type="button"
         href="#"
@@ -93,6 +120,25 @@ export default {
       text-decoration: none;
       color: #ddd;
 
+      svg {
+        width: 2.1em;
+
+        .st0 {
+          fill: none;
+        }
+
+        .st1 {
+          fill-rule: evenodd;
+          clip-rule: evenodd;
+          fill: #dddddd;
+
+          &:hover {
+            fill: #2962ff;
+            transition-duration: 250ms;
+          }
+        }
+      }
+
       .fa-github:hover {
         color: #777777;
         transition-duration: 250ms;
@@ -103,10 +149,10 @@ export default {
         transition-duration: 250ms;
       }
 
-      .fa-envelope:hover {
-        color: #ffc558;
-        transition-duration: 250ms;
-      }
+      // .fa-envelope:hover {
+      //   color: #ffc558;
+      //   transition-duration: 250ms;
+      // }
 
       i {
         font-size: 2em;
