@@ -6,17 +6,19 @@
         :key="post.cuid"
         class="card"
       >
-        <div class="cover-image">
-          <img :src="post.coverImage" />
-        </div>
-        <div class="text">
-          <div class="title">
-            <a :href="`https://ahmeds.tech/${post.slug}`">{{ post.title }}</a>
+        <a :href="`https://ahmeds.tech/${post.slug}`">
+          <div class="cover-image">
+            <img :src="post.coverImage" />
           </div>
-          <div class="description">
-            <p>{{ post.brief }}</p>
+          <div class="text">
+            <div class="title">
+              <h3>{{ post.title }}</h3>
+            </div>
+            <div class="description">
+              <p>{{ post.brief }}</p>
+            </div>
           </div>
-        </div>
+        </a>
       </section>
     </div>
     <LoadingComponent v-else />
@@ -70,6 +72,18 @@ export default {
       transition-duration: 300ms;
     }
 
+    a {
+      text-decoration: none;
+
+      &:hover {
+        .title {
+          h3 {
+            color: #42b983;
+          }
+        }
+      }
+    }
+
     .cover-image {
       img {
         width: 100%;
@@ -78,17 +92,18 @@ export default {
 
     .text {
       padding: 1em;
+
       .title {
-        a {
+        h3 {
           text-decoration: none;
           color: #ddd;
           font-size: 1.2em;
+          font-weight: 600;
 
-          &:hover {
-            color: #42b983;
-          }
+          // &:hover {
+          //   color: #42b983;
+          // }
         }
-        font-weight: 600;
       }
 
       .description {
