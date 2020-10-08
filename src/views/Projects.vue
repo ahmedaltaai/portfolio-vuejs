@@ -9,7 +9,15 @@
 </template>
 
 <script>
-import Project from '@/components/Project'
+//import Project from '@/components/Project'
+import LoadingComponent from '@/components/LoadingComponent'
+import ErrorComponent from '@/components/ErrorComponent'
+const Project = () => ({
+  component: import(/* webpackChunkName: "project" */ '@/components/Project'),
+  loading: LoadingComponent,
+  error: ErrorComponent,
+  timeout: 3000
+})
 
 export default {
   components: { Project }
