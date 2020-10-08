@@ -28,7 +28,7 @@ export default {
   apollo: {
     user: gql`
       query {
-        user(username: "ahmedaltaai") {
+        user(username: "catalinpit") {
           publication {
             posts {
               coverImage
@@ -66,7 +66,6 @@ export default {
     .cover-image {
       img {
         width: 100%;
-        object-fit: fill;
       }
     }
 
