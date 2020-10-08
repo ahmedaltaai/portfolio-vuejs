@@ -7,6 +7,41 @@
         <div class="description loading"></div>
       </div>
     </div>
+    <div class="card">
+      <div class="image loading"></div>
+      <div class="text ">
+        <div class="title loading"></div>
+        <div class="description loading"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image loading"></div>
+      <div class="text ">
+        <div class="title loading"></div>
+        <div class="description loading"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image loading"></div>
+      <div class="text ">
+        <div class="title loading"></div>
+        <div class="description loading"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image loading"></div>
+      <div class="text ">
+        <div class="title loading"></div>
+        <div class="description loading"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image loading"></div>
+      <div class="text ">
+        <div class="title loading"></div>
+        <div class="description loading"></div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -79,6 +114,30 @@ export default {
   @keyframes loading {
     100% {
       transform: translateX(100%);
+    }
+  }
+}
+
+@media (min-width: 46em) {
+  .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .card {
+      width: 45%;
+      margin: 2em 1em;
+    }
+  }
+}
+
+@media (min-width: 66em) {
+  .container {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+
+    .card {
+      width: 30%;
+      margin: 2em 1em;
     }
   }
 }
