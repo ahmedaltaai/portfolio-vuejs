@@ -58,7 +58,7 @@ main {
 }
 
 .articles__view {
-  height: 100%;
+  height: 93vh;
 }
 
 @media (min-width: 43em) {

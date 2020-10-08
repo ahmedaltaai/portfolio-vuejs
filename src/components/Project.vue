@@ -58,7 +58,7 @@ export default {
   },
   // requesting the repos from the GitHub API at creation
   // with the JavaScript fetch API
-  created() {
+  beforeCreate() {
     fetch(
       'https://api.github.com/users/ahmedaltaai/repos?type=public?sort=ascending'
     )
