@@ -3,7 +3,7 @@
     <nav class="navbar">
       <figure>
         <router-link to="/">
-          <img src="@/assets/logo.png" alt />
+          <img src="@/assets/logo.png" alt="LOGO" />
         </router-link>
       </figure>
       <i class="fas fa-bars" @click="openNav"></i>
