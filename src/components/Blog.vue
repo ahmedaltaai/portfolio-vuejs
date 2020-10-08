@@ -1,30 +1,37 @@
 <template>
-  <article class="publications__container">
-    <section
-      v-for="post in user.publication.posts"
-      :key="post.cuid"
-      class="card"
-    >
-      <div class="cover-image">
-        <img :src="post.coverImage" />
-      </div>
-      <div class="text">
-        <div class="title">
-          <a :href="`https://ahmeds.tech/${post.slug}`">{{ post.title }}</a>
+  <article>
+    <div v-if="!$apollo.loading" class="publications__container">
+      <section
+        v-for="post in user.publication.posts"
+        :key="post.cuid"
+        class="card"
+      >
+        <div class="cover-image">
+          <img :src="post.coverImage" />
         </div>
-        <div class="description">
-          <p>{{ post.brief }}</p>
+        <div class="text">
+          <div class="title">
+            <a :href="`https://ahmeds.tech/${post.slug}`">{{ post.title }}</a>
+          </div>
+          <div class="description">
+            <p>{{ post.brief }}</p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
+    <LoadingComponent v-else />
   </article>
 </template>
 
 <script>
 import gql from 'graphql-tag'
+import LoadingComponent from '@/components/LoadingComponent'
 
 export default {
   name: 'blog',
+  components: {
+    LoadingComponent
+  },
   apollo: {
     user: gql`
       query {
