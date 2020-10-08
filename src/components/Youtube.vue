@@ -28,10 +28,10 @@ export default {
   },
   created() {
     fetch(
-      'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet%2CcontentDetails&maxResults=10&playlistId={PLAYLIST_ID_OF_THE_CHANNEL}&key={YOUR_API_KEY}'
+      'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet%2CcontentDetails&playlistId=UUM9Bztd3u_y5Nyqbmg9d4Ow&key=AIzaSyB217WFq3rtxL8q7BmHX0UA39yyvyt2qIM'
     )
-      .then(res => res.JSON())
-      .then(data => (this.videos = data))
+      .then(res => res.json())
+      .then(data => console.log(data))
   }
 }
 </script>
