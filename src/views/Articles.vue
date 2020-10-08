@@ -18,23 +18,38 @@
 
 <script>
 // @ is an alias to /src
-import Blog from '@/components/Blog'
-import Youtube from '@/components/Youtube'
+import LoadingComponent from '@/components/LoadingComponent'
+import ErrorComponent from '@/components/ErrorComponent'
+// import YOUTUBE from '@/components/Youtube'
 import { bus } from '../main'
+
+const BLOG = () => ({
+  component: import(/* webpackChunkName: "Blog" */ '@/components/Blog'),
+  loading: LoadingComponent,
+  error: ErrorComponent,
+  timeout: 3000
+})
+
+const YOUTUBE = () => ({
+  component: import(/* webpackChunkName: "Youtube" */ '@/components/Youtube'),
+  loading: LoadingComponent,
+  error: ErrorComponent,
+  timeout: 3000
+})
 
 export default {
   name: 'Home',
   components: {
-    Blog,
-    Youtube
+    BLOG,
+    YOUTUBE
   },
   data() {
     return {
-      component: 'Blog',
+      component: 'BLOG',
       margin: false
     }
   },
-  created() {
+  beforeCreate() {
     // created an event bus to grab the boolean
     // value from the navbar component
     bus.$on('opened', data => {
@@ -42,18 +57,18 @@ export default {
     })
   },
   mounted() {
-    if (this.component === 'Blog') {
+    if (this.component === 'BLOG') {
       document.querySelector('.blog').classList.add('active')
     }
   },
   methods: {
     blog() {
-      this.component = 'Blog'
+      this.component = 'BLOG'
       document.querySelector('.youtube').classList.remove('active')
       document.querySelector('.blog').classList.add('active')
     },
     youtube() {
-      this.component = 'Youtube'
+      this.component = 'YOUTUBE'
       document.querySelector('.blog').classList.remove('active')
       document.querySelector('.youtube').classList.add('active')
     }
