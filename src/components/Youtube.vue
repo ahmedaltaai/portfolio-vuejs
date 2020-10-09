@@ -1,17 +1,17 @@
 <template>
   <article class="publications__container">
-    <section v-for="(object, i) in videos" :key="i" class="card">
-      <div v-for="video in object.items" :key="video.id">
+    <section v-for="(videos, i) in channelContent" :key="i" class="card">
+      <div v-for="video in videos.items" :key="video.id">
         <div class="cover-image">
-          <img :src="video.thumbnail.standard" />
+          <img :src="video.snippet.thumbnail.standard" />
         </div>
         <div class="title">
           <a
             :href="
-              `https://www.youtube.com/watch?v=${video.resourceId.videoId}`
+              `https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}`
             "
-            >{{ video.title }}</a
-          >
+            >{{ video.snippet.title }}
+          </a>
         </div>
       </div>
     </section>
@@ -23,7 +23,7 @@ export default {
   name: 'Youtube',
   data() {
     return {
-      videos: []
+      channelContent: []
     }
   },
   created() {
@@ -31,7 +31,7 @@ export default {
       'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet, contentDetails&playlistId=UUW5YeuERMmlnqo4oq8vwUpg&key=AIzaSyB217WFq3rtxL8q7BmHX0UA39yyvyt2qIM'
     )
       .then(res => res.json())
-      .then(data => console.log(data))
+      .then(data => (this.channelContent = data))
   }
 }
 </script>
