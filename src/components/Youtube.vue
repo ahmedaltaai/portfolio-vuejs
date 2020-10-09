@@ -28,15 +28,10 @@ export default {
   },
   beforeCreate() {
     fetch(
-      'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet, contentDetails&playlistId=UUW5YeuERMmlnqo4oq8vwUpg&key=AIzaSyB217WFq3rtxL8q7BmHX0UA39yyvyt2qIM'
+      'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UUW5YeuERMmlnqo4oq8vwUpg&key=AIzaSyB217WFq3rtxL8q7BmHX0UA39yyvyt2qIM'
     )
       .then(res => res.json())
       .then(data => (this.channelContent = data))
-  },
-  created() {
-    console.log(this.channelContent)
-    console.log(this.channelContent.items)
-    console.log(this.channelContent.items.snippet)
   }
 }
 </script>
