@@ -28,7 +28,7 @@ export default {
   },
   created() {
     fetch(
-      'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet%2CcontentDetails&playlistId=UUM9Bztd3u_y5Nyqbmg9d4Ow&key=AIzaSyB217WFq3rtxL8q7BmHX0UA39yyvyt2qIM'
+      'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet, contentDetails&playlistId=UUW5YeuERMmlnqo4oq8vwUpg&key=AIzaSyB217WFq3rtxL8q7BmHX0UA39yyvyt2qIM'
     )
       .then(res => res.json())
       .then(data => console.log(data))
