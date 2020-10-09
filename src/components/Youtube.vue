@@ -26,12 +26,17 @@ export default {
       channelContent: []
     }
   },
-  created() {
+  beforeCreate() {
     fetch(
       'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet, contentDetails&playlistId=UUW5YeuERMmlnqo4oq8vwUpg&key=AIzaSyB217WFq3rtxL8q7BmHX0UA39yyvyt2qIM'
     )
       .then(res => res.json())
       .then(data => (this.channelContent = data))
+  },
+  created() {
+    console.log(this.channelContent)
+    console.log(this.channelContent.items)
+    console.log(this.channelContent.items.snippet)
   }
 }
 </script>
@@ -39,7 +44,6 @@ export default {
 <style lang="scss" scoped>
 .publications__container {
   display: flex;
-  flex-wrap: wrap;
   margin: 0 auto;
   width: 90%;
 
@@ -57,7 +61,6 @@ export default {
     .cover-image {
       img {
         width: 100%;
-        object-fit: fill;
       }
     }
 
@@ -80,7 +83,7 @@ export default {
 
 @media (min-width: 46em) {
   .publications__container {
-    flex-direction: row;
+    flex-direction: row !important;
     flex-wrap: wrap;
 
     .card {
@@ -92,9 +95,6 @@ export default {
 
 @media (min-width: 66em) {
   .publications__container {
-    flex-direction: row !important;
-    flex-wrap: wrap;
-
     .card {
       width: 30%;
       margin: 2em 1em;
