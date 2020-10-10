@@ -32,6 +32,9 @@ export default {
     )
       .then(res => res.json())
       .then(data => (this.channelContent = data))
+  },
+  created() {
+    console.log(this.video)
   }
 }
 </script>
