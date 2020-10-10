@@ -33,11 +33,11 @@ export default {
   width: 90%;
 
   img {
-    margin-top: 2em;
+    margin-top: 1em;
   }
 
   h1 {
-    margin-top: 1em;
+    margin-top: 0.5em;
     text-align: center;
     color: #ddd;
   }
