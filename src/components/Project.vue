@@ -7,7 +7,7 @@
         <!-- card header -->
         <header class="header">
           <div class="repo-name">
-            <a :href="repo.homepage">
+            <a :href="repo.svn_url">
               {{ repo.name }}
             </a>
           </div>
