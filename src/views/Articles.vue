@@ -2,7 +2,7 @@
   <main class="articles__view">
     <!-- connecting dynamic classes to move the buttons up and down -->
     <!-- when the side nav slides open/back -->
-    <div class="buttons" :class="{ down: margin, up: !margin }">
+    <!-- <div class="buttons" :class="{ down: margin, up: !margin }">
       <button @click="blog" class="blog">
         <i class="fab fa-blogger-b"></i>
         BLOGS
@@ -11,68 +11,50 @@
         <i class="fab fa-youtube"></i>
         VIDEOS
       </button>
-    </div>
-    <component v-bind:is="component"></component>
+    </div> -->
+    <Blog />
   </main>
 </template>
 
 <script>
-// @ is an alias to /src
-import LoadingComponent from '@/components/LoadingComponent'
-import ErrorComponent from '@/components/ErrorComponent'
-// import YOUTUBE from '@/components/Youtube'
-import { bus } from '../main'
-
-const BLOG = () => ({
-  component: import(/* webpackChunkName: "Blog" */ '@/components/Blog'),
-  loading: LoadingComponent,
-  error: ErrorComponent,
-  timeout: 3000
-})
-
-const YOUTUBE = () => ({
-  component: import(/* webpackChunkName: "Youtube" */ '@/components/Youtube'),
-  loading: LoadingComponent,
-  error: ErrorComponent,
-  timeout: 3000
-})
+import Blog from '@/components/Blog'
+// import { bus } from '../main'
 
 export default {
   name: 'Home',
   components: {
-    BLOG,
-    YOUTUBE
-  },
-  data() {
-    return {
-      component: 'BLOG',
-      margin: false
-    }
-  },
-  beforeCreate() {
-    // created an event bus to grab the boolean
-    // value from the navbar component
-    bus.$on('opened', data => {
-      this.margin = data
-    })
-  },
-  mounted() {
-    if (this.component === 'BLOG') {
-      document.querySelector('.blog').classList.add('active')
-    }
-  },
-  methods: {
-    blog() {
-      this.component = 'BLOG'
-      document.querySelector('.youtube').classList.remove('active')
-      document.querySelector('.blog').classList.add('active')
-    },
-    youtube() {
-      this.component = 'YOUTUBE'
-      document.querySelector('.blog').classList.remove('active')
-      document.querySelector('.youtube').classList.add('active')
-    }
+    Blog
   }
+  // data() {
+  //   return {
+  //     component: 'BLOG',
+  //     margin: false
+  //   }
+  // },
+  // beforeCreate() {
+  //   // created an event bus to grab the boolean
+  //   // value from the navbar component
+  //   bus.$on('opened', data => {
+  //     this.margin = data
+  //   })
+  // },
+  // mounted() {
+  //   if (this.component === 'BLOG') {
+  //     document.querySelector('.blog').classList.add('active')
+  //   }
+  // },
+  // methods: {
+  //   blog() {
+  //     this.component = 'BLOG'
+  //     document.querySelector('.youtube').classList.remove('active')
+  //     document.querySelector('.blog').classList.add('active')
+  //   },
+  //   youtube() {
+  //     this.component = 'YOUTUBE'
+  //     document.querySelector('.blog').classList.remove('active')
+  //     document.querySelector('.youtube').classList.add('active')
+  //   }
+  // }
 }
 </script>
 
