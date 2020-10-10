@@ -6,8 +6,10 @@
       <div>
         <!-- card header -->
         <header class="header">
-          <div>
-            {{ repo.name }}
+          <div class="repo-name">
+            <a :href="repo.homepage">
+              {{ repo.name }}
+            </a>
           </div>
           <div class="lang">
             <span></span>
@@ -65,7 +67,6 @@ export default {
       .then(res => res.json())
       .then(data => {
         this.repos = data
-        // console.log(data)
       })
   },
   // while mounted update the tag color of the displayed language
@@ -78,7 +79,6 @@ export default {
     // to decide which language gets which color
     // with 'tag' you can access the individual nodes
     // within the grabed element
-
     for (let tag of lang) {
       if (tag.innerText === 'PHP') {
         tag.firstChild.style.backgroundColor = '#4F5D95'
@@ -117,8 +117,12 @@ export default {
     box-shadow: 0px 5px 15px 1px #222;
 
     &:hover {
-      transform: translateY(-10%);
+      transform: translateY(-5%);
       transition-duration: 300ms;
+
+      .repo-name a {
+        color: #42b983 !important;
+      }
     }
 
     .header {
@@ -126,6 +130,11 @@ export default {
       justify-content: space-between;
       border-bottom: 1px solid #777;
       padding-bottom: 0.5em;
+
+      a {
+        text-decoration: none;
+        color: #ddd;
+      }
 
       .lang {
         display: flex;
