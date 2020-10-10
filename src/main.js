@@ -6,7 +6,7 @@ import { createProvider } from './vue-apollo'
 Vue.config.productionTip = false
 
 // create an event bus
-export const bus = new Vue()
+// export const bus = new Vue()
 
 new Vue({
   router,

@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import { bus } from '../main'
+// import { bus } from '../main'
 export default {
   name: 'Navbar',
   data() {
@@ -43,7 +43,7 @@ export default {
   methods: {
     openNav() {
       this.showNav = !this.showNav
-      bus.$emit('opened', this.showNav)
+      // bus.$emit('opened', this.showNav)
     }
   },
   watch: {
