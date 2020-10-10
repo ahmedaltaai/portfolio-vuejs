@@ -10,7 +10,7 @@
             :href="
               `https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}`
             "
-            >{{ video.snippet.title }}
+            >{{ video.id }}
           </a>
         </div>
       </div>
@@ -32,9 +32,6 @@ export default {
     )
       .then(res => res.json())
       .then(data => (this.channelContent = data))
-  },
-  created() {
-    console.log(this.video)
   }
 }
 </script>
