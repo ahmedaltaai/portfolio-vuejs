@@ -23,7 +23,7 @@
         <li>
           <router-link to="/articles">
             <i class="fas fa-scroll"></i>
-            Publications
+            Blogs
           </router-link>
         </li>
       </ul>
