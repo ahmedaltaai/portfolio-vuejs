@@ -57,6 +57,7 @@ export default {
 <style lang="scss" scoped>
 .publications__container {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   margin: 0 auto;
   width: 90%;
