@@ -36,6 +36,14 @@ main {
   margin-top: 7vh;
 }
 
+a:focus {
+  outline: none;
+}
+
+a:active {
+  outline: none;
+}
+
 ::-webkit-scrollbar {
   display: none;
   scrollbar-width: none;
