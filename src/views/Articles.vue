@@ -12,6 +12,11 @@
         VIDEOS
       </button>
     </div> -->
+    <div class="image">
+      <img src="../assets/blogs.svg" alt="" />
+
+      <h1>MY BLOGS</h1>
+    </div>
     <Blog />
   </main>
 </template>
@@ -59,6 +64,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.image {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0em auto;
+  width: 90%;
+
+  img {
+    margin-top: 1em;
+  }
+
+  h1 {
+    margin-top: 0.5em;
+    text-align: center;
+    color: #ddd;
+  }
+}
+
 .down {
   margin-top: 13.3vh;
   transition-duration: 100ms;
@@ -110,6 +133,25 @@ export default {
 }
 
 @media (min-width: 43em) {
+  .image {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0em auto;
+    padding: 2em;
+    width: 80%;
+
+    img {
+      margin-top: 2em;
+    }
+
+    h1 {
+      margin-top: 2em;
+      text-align: center;
+      color: #ddd;
+    }
+  }
+
   .buttons {
     button {
       font-size: 1.5em;
@@ -118,6 +160,25 @@ export default {
 }
 
 @media (min-width: 64em) {
+  .image {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0em auto;
+    padding: 2em;
+    width: 50%;
+
+    img {
+      margin-top: 2em;
+    }
+
+    h1 {
+      margin-top: 2em;
+      text-align: center;
+      color: #ddd;
+    }
+  }
+
   .buttons {
     button {
       font-size: 2em;
