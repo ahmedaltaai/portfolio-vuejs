@@ -5,7 +5,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import IntroCard from '@/components/IntroCard'
 
 export default {
