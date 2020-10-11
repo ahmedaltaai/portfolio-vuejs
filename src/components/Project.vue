@@ -54,16 +54,14 @@ export default {
     // in it. to overcome empty divs
     wantedRepos: function() {
       return this.repos.filter(repo => {
-        return repo.homepage
+        return repo.homepage || repo.stargazers_count > 0
       })
     }
   },
   // requesting the repos from the GitHub API at creation
   // with the JavaScript fetch API
   beforeCreate() {
-    fetch(
-      'https://api.github.com/users/ahmedaltaai/repos?type=public?sort=ascending'
-    )
+    fetch('https://api.github.com/users/ahmedaltaai/repos?type=public')
       .then(res => res.json())
       .then(data => {
         this.repos = data
@@ -96,6 +94,10 @@ export default {
         tag.firstChild.style.backgroundColor = '#b07219'
       } else if (tag.innerText === 'Python') {
         tag.firstChild.style.backgroundColor = '#3572A5'
+      } else if (tag.innerText === 'Vue') {
+        tag.firstChild.style.backgroundColor = '#2c3e50'
+      } else if (tag.innerText === 'TypeScript') {
+        tag.firstChild.style.backgroundColor = '#2b7489'
       }
     }
   }
