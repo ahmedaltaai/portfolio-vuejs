@@ -8,7 +8,7 @@ const app = express()
 const staticFileMiddleware = express.static(path.join(__dirname, '/dist'))
 
 app.use(staticFileMiddleware)
-app.use(forceSSL)
+app.use(forceSSL())
 app.use(
   history({
     disableDotRule: true,
