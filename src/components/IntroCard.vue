@@ -84,7 +84,7 @@ export default {
 
       // hashnode icon
       svg {
-        width: 2.1em;
+        width: 2em;
 
         .st0 {
           fill: none;
