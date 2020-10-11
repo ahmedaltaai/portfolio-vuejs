@@ -2,80 +2,55 @@
   <article class="card">
     <section class="intro">
       <h1>
-        Hi, <br />
-        I'm Ahmed, <br />
-        Keyboard Warrior.
+        <span>Hi,</span>
+        <span>I'm Ahmed,</span>
+        <span>Web Developer.</span>
       </h1>
-      <router-link to="/projects" class="link-to-projects">
-        PROJECTS
-      </router-link>
-    </section>
-    <section class="links">
-      <a href="https://github.com/ahmedaltaai">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="https://twitter.com/realAhmedAltaai">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="https://ahmeds.tech/">
-        <svg
-          version="1.1"
-          id="Layer_1"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          x="0px"
-          y="0px"
-          viewBox="0 0 337 337"
-          style="enable-background:new 0 0 337 337;"
-          xml:space="preserve"
-        >
-          <path
-            class="st0"
-            d="M168.5,113L168.5,113c30.7,0,55.5,24.8,55.5,55.5l0,0c0,30.7-24.8,55.5-55.5,55.5l0,0
+      <div class="links">
+        <a href="https://github.com/ahmedaltaai">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://twitter.com/realAhmedAltaai">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://ahmeds.tech/">
+          <svg
+            version="1.1"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            viewBox="0 0 337 337"
+            style="enable-background:new 0 0 337 337;"
+            xml:space="preserve"
+          >
+            <path
+              class="st0"
+              d="M168.5,113L168.5,113c30.7,0,55.5,24.8,55.5,55.5l0,0c0,30.7-24.8,55.5-55.5,55.5l0,0
 	c-30.7,0-55.5-24.8-55.5-55.5l0,0C113,137.8,137.8,113,168.5,113z"
-          />
-          <path
-            class="st1"
-            d="M23.2,112.6c-30.9,30.9-30.9,80.9,0,111.8l89.4,89.4c30.9,30.9,80.9,30.9,111.8,0l89.4-89.4
+            />
+            <path
+              class="st1"
+              d="M23.2,112.6c-30.9,30.9-30.9,80.9,0,111.8l89.4,89.4c30.9,30.9,80.9,30.9,111.8,0l89.4-89.4
 	c30.9-30.9,30.9-80.9,0-111.8l-89.4-89.4c-30.9-30.9-80.9-30.9-111.8,0C112.6,23.2,23.2,112.6,23.2,112.6z M207.6,207.6
 	c21.6-21.6,21.6-56.7,0-78.3c-21.6-21.6-56.7-21.6-78.3,0c-21.6,21.6-21.6,56.7,0,78.3C151,229.2,186,229.2,207.6,207.6L207.6,207.6
 	z"
-          />
-        </svg>
-      </a>
-
-      <!-- <button
-        type="button"
-        href="#"
-        @click="showModal"
-        class="fas fa-envelope"
-      ></button> -->
+            />
+          </svg>
+        </a>
+      </div>
     </section>
-    <!-- <modal v-show="isModalVisible" @close="closeModal" /> -->
+
+    <router-link to="/projects" class="link-to-projects">
+      PROJECTS
+    </router-link>
   </article>
 </template>
 
 <script>
-// import modal from '@/components/Modal'
-
 export default {
-  name: 'IntroCard',
-  components: {
-    // modal
-  }
-  // data() {
-  //   return {
-  //     isModalVisible: false
-  //   }
-  // },
-  // methods: {
-  //   showModal() {
-  //     this.isModalVisible = true
-  //   },
-  //   closeModal() {
-  //     this.isModalVisible = false
-  //   }
-  // }
+  name: 'IntroCard'
 }
 </script>
 
@@ -90,36 +65,24 @@ export default {
   flex-direction: column;
   justify-content: space-between;
 
-  button {
-    border: none;
-    background-color: transparent;
-
-    font-size: 2em;
-    cursor: pointer;
-    color: #ddd;
-
-    &:hover {
-      color: #ffc558;
-      transition-duration: 250ms;
-    }
-  }
-
   .intro {
     h1 {
       font-size: 1.8em;
-      margin-bottom: 1em;
+      display: flex;
+      flex-direction: column;
     }
   }
 
   .links {
     display: flex;
     justify-content: space-evenly;
-    margin-top: 3em;
+    margin: 2em 0;
 
     a {
       text-decoration: none;
       color: #ddd;
 
+      // hashnode icon
       svg {
         width: 2.1em;
 
@@ -149,11 +112,6 @@ export default {
         transition-duration: 250ms;
       }
 
-      // .fa-envelope:hover {
-      //   color: #ffc558;
-      //   transition-duration: 250ms;
-      // }
-
       i {
         font-size: 2em;
         cursor: pointer;
@@ -167,8 +125,10 @@ export default {
     background-color: transparent;
     padding: 0.5em 1em;
     font-weight: 600;
-    font-size: 1.2em;
+    font-size: 1em;
     text-decoration: none;
+    width: 100%;
+    text-align: center;
 
     &:hover {
       background-color: #42b983;
@@ -184,49 +144,42 @@ export default {
 
 @media (min-width: 43em) {
   .card {
-    max-width: 60%;
-    flex-direction: row;
+    max-width: 70%;
+    padding: 6em;
 
     .intro {
-      height: 100%;
+      height: 70%;
+      width: 100%;
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
 
       h1 {
+        height: 100%;
         font-size: 2em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
       }
     }
 
     .links {
+      justify-content: space-between;
       flex-direction: column;
       margin-top: 0;
+      margin-right: 0.5em;
+      height: 100%;
     }
 
     .link-to-projects {
-      width: 50%;
+      width: 100%;
+      margin-top: 2em;
     }
   }
 }
 
 @media (min-width: 64em) {
   .card {
-    max-width: 50%;
-    flex-direction: row;
-    padding: 6em;
-
-    .intro {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-
-      h1 {
-        font-size: 2em;
-      }
-    }
-
-    .links {
-      flex-direction: column;
-    }
+    max-width: 45%;
   }
 }
 </style>
