@@ -3,7 +3,7 @@ const path = require('path')
 const history = require('connect-history-api-fallback')
 const enforce = require('express-sslify')
 const subdomain = require('express-subdomain')
-// const router = express.Router()
+const router = express.Router()
 
 const app = express()
 
@@ -21,11 +21,14 @@ app.use(
 )
 
 app.use(mainWebsite)
-app.use(subdomain('willhaben', willhabenProject))
+
+router.use(willhabenProject)
 
 app.get('/', (req, res) => {
   res.render(path.join(__dirname, '/dist'))
 })
+
+app.use(subdomain('willhaben', router))
 
 app.use(enforce.HTTPS())
 
