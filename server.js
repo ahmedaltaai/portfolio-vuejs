@@ -7,9 +7,13 @@ const app = express()
 
 // serves files from dist directory which contains the built website
 const mainWebsite = express.static(path.join(__dirname, '/dist'))
-const willhabenProject = express.static(path.join(__dirname, '/dist/willhaben'))
+
+// import willhaben-project
+const willhaben = require('./willhaben')
 
 app.use(mainWebsite)
+
+app.use(vhost('willhaben.ahmedaltaai.com', willhaben))
 
 app.use(
   history({
@@ -28,10 +32,6 @@ app.use(enforce.HTTPS())
 
 const port = process.env.PORT || 8080
 
-express()
-  .use(vhost('willhaben.ahmedaltaai.com', require(willhabenProject).app))
-  .listen(port)
-
-// app.listen(port)
+app.listen(port)
 
 console.log('Listening on port: ' + port)
