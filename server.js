@@ -2,9 +2,7 @@ const express = require('express')
 const path = require('path')
 const history = require('connect-history-api-fallback')
 const enforce = require('express-sslify')
-const subdomain = require('express-subdomain')
-const router = express.Router()
-
+const vhost = require('vhost')
 const app = express()
 
 // serves files from dist directory which contains the built website
@@ -22,18 +20,18 @@ app.use(
 
 app.use(mainWebsite)
 
-router.use(willhabenProject)
-
 app.get('/', (req, res) => {
   res.render(path.join(__dirname, '/dist'))
 })
-
-app.use(subdomain('willhaben', router))
 
 app.use(enforce.HTTPS())
 
 const port = process.env.PORT || 8080
 
-app.listen(port)
+express()
+  .use(vhost('willhaben.ahmedaltaai.com', require(willhabenProject).app))
+  .listen(port)
+
+// app.listen(port)
 
 console.log('Listening on port: ' + port)
