@@ -13,7 +13,7 @@ const mainWebsite = express.static(path.join(__dirname, '/dist'))
 // const willhaben = require('./willhaben')
 
 app.use(mainWebsite)
-app.use(vhost('willhaben.ahmedaltaai.com', require('./willhaben/server')))
+app.use(vhost('willhaben.ahmedaltaai.com', require('./willhaben/app')))
 
 app.use(
   history({
