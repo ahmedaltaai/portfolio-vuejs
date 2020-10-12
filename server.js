@@ -21,7 +21,7 @@ app.use(
 )
 
 app.use(mainWebsite)
-app.use(subdomain('willhabenProject', willhabenProject))
+app.use(subdomain('willhaben', willhabenProject))
 
 app.get('/', (req, res) => {
   res.render(path.join(__dirname, '/dist'))
