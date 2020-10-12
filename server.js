@@ -9,7 +9,7 @@ const app = express()
 const mainWebsite = express.static(path.join(__dirname, '/dist'))
 
 // import willhaben-project
-const willhaben = require('./willhaben')
+const { willhaben } = require('./willhaben')
 
 app.use(mainWebsite)
 

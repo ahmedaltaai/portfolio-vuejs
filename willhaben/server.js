@@ -3,7 +3,7 @@ const path = require('path')
 const willhaben = express()
 
 willhaben.get('/', (req, res) => {
-  res.render(path.join(__dirname, '/'))
+  res.send(path.join(__dirname, '/'))
 })
 
-module.exports = willhaben
+module.exports = { willhaben }
