@@ -7,10 +7,10 @@ const app = express()
 
 // serves files from dist directory which contains the built website
 const mainWebsite = express.static(path.join(__dirname, '/dist'))
-const willhaben = express.static(path.join(__dirname, '/willhaben'))
+// const willhaben = express.static(path.join(__dirname, '/willhaben'))
 
 // import willhaben-project
-// const { willhaben } = require('./willhaben')
+const { willhaben } = require('./willhaben')
 
 app.use(mainWebsite).use(vhost('willhaben.ahmedaltaai.com', willhaben))
 
