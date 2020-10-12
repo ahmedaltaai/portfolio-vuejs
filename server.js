@@ -11,9 +11,7 @@ const mainWebsite = express.static(path.join(__dirname, '/dist'))
 // import willhaben-project
 const { willhaben } = require('./willhaben')
 
-app.use(mainWebsite)
-
-app.use(vhost('willhaben.ahmedaltaai.com', willhaben))
+app.use(mainWebsite).use(vhost('willhaben.ahmedaltaai.com', willhaben))
 
 app.use(
   history({
@@ -22,7 +20,7 @@ app.use(
   })
 )
 
-app.use(mainWebsite)
+app.use(mainWebsite).use(vhost('willhaben.ahmedaltaai.com', willhaben))
 
 app.get('/', (req, res) => {
   res.render(path.join(__dirname, '/dist'))
