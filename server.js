@@ -9,7 +9,7 @@ const app = express()
 // serves files from dist directory which contains the built website
 const mainWebsite = express.static(path.join(__dirname, '/dist'))
 // serves the willhaben project
-const willhabenProject = express.static(path.join(__dirname, '/dist/willhaben'))
+const willhabenProject = express.static(path.join(__dirname, '/willhaben'))
 
 app.use(mainWebsite)
 
