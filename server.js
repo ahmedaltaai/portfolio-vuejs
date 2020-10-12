@@ -2,12 +2,16 @@ const express = require('express')
 const path = require('path')
 const history = require('connect-history-api-fallback')
 const enforce = require('express-sslify')
+const vhost = require('vhost')
+
 const app = express()
 
-// serves files from npmdist directory which now contains the built website
-const staticFileMiddleware = express.static(path.join(__dirname, '/dist'))
+// serves files from dist directory which contains the built website
+const mainWebsite = express.static(path.join(__dirname, '/dist'))
+// serves the willhaben project
+const willhabenProject = express.static(path.join(__dirname, '/dist/willhaben'))
 
-app.use(staticFileMiddleware)
+app.use(mainWebsite)
 
 app.use(
   history({
@@ -16,7 +20,9 @@ app.use(
   })
 )
 
-app.use(staticFileMiddleware)
+app.use(mainWebsite)
+
+app.use(vhost('willhaben.ahmedaltaai.com', willhabenProject))
 
 app.get('/', (req, res) => {
   res.render(path.join(__dirname, '/dist'))
