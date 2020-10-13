@@ -5,13 +5,14 @@ const enforce = require('express-sslify')
 const vhost = require('vhost')
 const app = express()
 
-// serves files from dist directory which contains the built website
+// serves files from dist directory which contains the main website (portfolio)
 const mainWebsite = express.static(path.join(__dirname, '/dist'))
-// const willhaben = express.static(path.join(__dirname, '/willhaben'))
 
-// import willhaben-project
-// const willhaben = require('./willhaben')
-app.use(vhost('willhaben.ahmedaltaai.com', require('./willhaben/app')))
+// import projects
+app.use(vhost('willhaben.ahmedaltaai.com', require('./projects/willhaben/app')))
+app.use(vhost('microsoft.ahmedaltaai.com', require('./projects/microsoft/app')))
+app.use(vhost('rps.ahmedaltaai.com', require('./projects/rps/app')))
+app.use(vhost('guf.ahmedaltaai.com', require('./projects/guf/app')))
 
 app.use(mainWebsite)
 
