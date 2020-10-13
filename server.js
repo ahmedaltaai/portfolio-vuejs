@@ -11,6 +11,7 @@ const mainWebsite = express.static(path.join(__dirname, '/dist'))
 
 // import willhaben-project
 // const willhaben = require('./willhaben')
+app.use(vhost('willhaben.ahmedaltaai.com', require('./willhaben/app')))
 
 app.use(mainWebsite)
 
@@ -30,7 +31,6 @@ app.get('/', (req, res) => {
 app.use(enforce.HTTPS())
 
 const port = process.env.PORT || 8080
-app.use(vhost('willhaben.ahmedaltaai.com', require('./willhaben/app')))
 
 app.listen(port)
 
