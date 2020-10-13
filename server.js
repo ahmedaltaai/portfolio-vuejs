@@ -23,8 +23,6 @@ app.use(
   })
 )
 
-app.use(mainWebsite)
-
 app.get('/', (req, res) => {
   res.render(path.join(__dirname, '/dist'))
 })
