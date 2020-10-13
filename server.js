@@ -14,14 +14,14 @@ app.use(vhost('microsoft.ahmedaltaai.com', require('./projects/microsoft/app')))
 app.use(vhost('rps.ahmedaltaai.com', require('./projects/rps/app')))
 app.use(vhost('guf.ahmedaltaai.com', require('./projects/guf/app')))
 
-app.use(mainWebsite)
-
 app.use(
   history({
     disableDotRule: true,
     verbose: true
   })
 )
+
+app.use(mainWebsite)
 
 app.get('/', (req, res) => {
   res.render(path.join(__dirname, '/dist'))
