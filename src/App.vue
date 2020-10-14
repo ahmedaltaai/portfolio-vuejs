@@ -66,7 +66,7 @@ a:active {
 }
 
 .articles__view {
-  height: 100%;
+  height: 100vh;
 }
 
 @media (min-width: 43em) {
