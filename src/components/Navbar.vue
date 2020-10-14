@@ -64,7 +64,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 7vh;
+  height: 3.55em;
   background-color: #2a2b2f;
   padding: 0 1em;
 
