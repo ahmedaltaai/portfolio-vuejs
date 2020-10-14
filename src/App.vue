@@ -27,13 +27,12 @@ export default {
 }
 
 body {
-  background-color: #212226;
+  background-color: #363940;
   height: 100%;
 }
 
 main {
-  background-color: #363940;
-  margin-top: 7vh;
+  margin-top: 3.55em;
 }
 
 a:focus {
@@ -59,14 +58,6 @@ a:active {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.projects__view {
-  height: 100%;
-}
-
-.articles__view {
-  height: 100vh;
 }
 
 @media (min-width: 43em) {
