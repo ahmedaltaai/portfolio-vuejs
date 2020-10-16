@@ -14,6 +14,9 @@ app.use(vhost('microsoft.ahmedaltaai.com', require('./projects/microsoft/app')))
 app.use(vhost('rps.ahmedaltaai.com', require('./projects/rps/app')))
 app.use(vhost('guf.ahmedaltaai.com', require('./projects/guf/app')))
 
+// Mounts the specified middleware function or functions
+// at the specified path: the middleware function is executed
+// when the base of the requested path matches path.
 app.use(mainWebsite)
 
 app.use(
@@ -23,16 +26,29 @@ app.use(
   })
 )
 
+// Mounts the specified middleware function or functions
+// at the specified path: the middleware function is executed
+// when the base of the requested path matches path.
 app.use(mainWebsite)
 
+// routes an HTTP request, where METHOD is the HTTP
+// method of the request, such as
+// GET, PUT, POST, and so on, in lowercase.
 app.get('/', (req, res) => {
+  // The path.join() method joins all given path segments together
+  // using the platform-specific separator as a delimiter,
+  // then normalizes the resulting path.
   res.render(path.join(__dirname, '/dist'))
 })
 
 app.use(enforce.HTTPS())
 
+// in many environments (e.g. Heroku), and as a convention,
+// you can set the environment variable PORT
+// to tell your web server what port to listen on.
 const port = process.env.PORT || 8080
 
 app.listen(port)
 
+// just logging out on which port the app is listening
 console.log('Listening on port: ' + port)
