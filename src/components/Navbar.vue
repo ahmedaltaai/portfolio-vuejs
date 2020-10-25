@@ -3,25 +3,25 @@
     <nav class="navbar">
       <figure>
         <router-link to="/">
-          <img src="@/assets/logo.png" alt="LOGO" />
+          <img src="@/assets/logo.png" alt="LOGO" width="32px" height="32px" />
         </router-link>
       </figure>
       <i class="fas fa-bars" @click="openNav"></i>
       <ul :class="{ slideOpen: showNav, slideBack: !showNav }">
         <li>
-          <router-link to="/">
+          <router-link to="/" alt="home">
             <i class="fas fa-home"></i>
             Home
           </router-link>
         </li>
         <li>
-          <router-link to="/projects">
+          <router-link to="/projects" alt="projects">
             <i class="fas fa-code-branch"></i>
             Projects
           </router-link>
         </li>
         <li>
-          <router-link to="/articles">
+          <router-link to="/articles" alt="articles">
             <i class="fas fa-scroll"></i>
             Blogs
           </router-link>
@@ -76,10 +76,6 @@ export default {
 
   figure {
     cursor: pointer;
-
-    img {
-      width: 32px;
-    }
   }
 
   ul {
