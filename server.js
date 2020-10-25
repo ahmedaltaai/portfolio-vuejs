@@ -44,6 +44,9 @@ app.get('/', (req, res) => {
   res.render(path.join(__dirname, '/dist'))
 })
 
+// enforces HTTPS because heroku uses reversed proxies
+app.use(enforce.HTTPS())
+
 // in many environments (e.g. Heroku), and as a convention,
 // you can set the environment variable PORT
 // to tell your web server what port to listen on.
