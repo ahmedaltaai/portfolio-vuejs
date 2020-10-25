@@ -9,19 +9,19 @@
       <i class="fas fa-bars" @click="openNav"></i>
       <ul :class="{ slideOpen: showNav, slideBack: !showNav }">
         <li>
-          <router-link to="/" alt="home">
+          <router-link to="/">
             <i class="fas fa-home"></i>
             Home
           </router-link>
         </li>
         <li>
-          <router-link to="/projects" alt="projects">
+          <router-link to="/projects">
             <i class="fas fa-code-branch"></i>
             Projects
           </router-link>
         </li>
         <li>
-          <router-link to="/articles" alt="articles">
+          <router-link to="/articles">
             <i class="fas fa-scroll"></i>
             Blogs
           </router-link>
