@@ -8,6 +8,9 @@ const app = express()
 // serves files from dist directory which contains the main website (portfolio)
 const mainWebsite = express.static(path.join(__dirname, '/dist'))
 
+// enforces HTTPS because heroku uses reversed proxies
+app.use(enforce.HTTPS())
+
 // import projects
 app.use(vhost('willhaben.ahmedaltaai.com', require('./projects/willhaben/app')))
 app.use(vhost('microsoft.ahmedaltaai.com', require('./projects/microsoft/app')))
@@ -31,9 +34,6 @@ app.use(
 // when the base of the requested path matches path.
 app.use(mainWebsite)
 
-// enforces HTTPS because heroku uses reversed proxies
-app.use(enforce.HTTPS())
-
 // routes an HTTP request, where METHOD is the HTTP
 // method of the request, such as
 // GET, PUT, POST, and so on, in lowercase.
@@ -43,9 +43,6 @@ app.get('/', (req, res) => {
   // then normalizes the resulting path.
   res.render(path.join(__dirname, '/dist'))
 })
-
-// enforces HTTPS because heroku uses reversed proxies
-app.use(enforce.HTTPS())
 
 // in many environments (e.g. Heroku), and as a convention,
 // you can set the environment variable PORT
