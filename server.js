@@ -14,9 +14,6 @@ app.use(vhost('microsoft.ahmedaltaai.com', require('./projects/microsoft/app')))
 app.use(vhost('rps.ahmedaltaai.com', require('./projects/rps/app')))
 app.use(vhost('guf.ahmedaltaai.com', require('./projects/guf/app')))
 
-// enforces HTTPS because heroku uses reversed proxies
-app.use(enforce.HTTPS())
-
 // Mounts the specified middleware function or functions
 // at the specified path: the middleware function is executed
 // when the base of the requested path matches path.
@@ -33,6 +30,9 @@ app.use(
 // at the specified path: the middleware function is executed
 // when the base of the requested path matches path.
 app.use(mainWebsite)
+
+// enforces HTTPS because heroku uses reversed proxies
+app.use(enforce.HTTPS({ trustProtoHeader: true }))
 
 // routes an HTTP request, where METHOD is the HTTP
 // method of the request, such as
