@@ -8,14 +8,14 @@ const app = express()
 // serves files from dist directory which contains the main website (portfolio)
 const mainWebsite = express.static(path.join(__dirname, '/dist'))
 
-// enforces HTTPS because heroku uses reversed proxies
-app.use(enforce.HTTPS())
-
 // import projects
 app.use(vhost('willhaben.ahmedaltaai.com', require('./projects/willhaben/app')))
 app.use(vhost('microsoft.ahmedaltaai.com', require('./projects/microsoft/app')))
 app.use(vhost('rps.ahmedaltaai.com', require('./projects/rps/app')))
 app.use(vhost('guf.ahmedaltaai.com', require('./projects/guf/app')))
+
+// enforces HTTPS because heroku uses reversed proxies
+app.use(enforce.HTTPS())
 
 // Mounts the specified middleware function or functions
 // at the specified path: the middleware function is executed
