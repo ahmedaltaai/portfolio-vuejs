@@ -31,6 +31,9 @@ app.use(
 // when the base of the requested path matches path.
 app.use(mainWebsite)
 
+// enforces HTTPS because heroku uses reversed proxies
+app.use(enforce.HTTPS())
+
 // routes an HTTP request, where METHOD is the HTTP
 // method of the request, such as
 // GET, PUT, POST, and so on, in lowercase.
@@ -40,8 +43,6 @@ app.get('/', (req, res) => {
   // then normalizes the resulting path.
   res.render(path.join(__dirname, '/dist'))
 })
-
-app.use(enforce.HTTPS())
 
 // in many environments (e.g. Heroku), and as a convention,
 // you can set the environment variable PORT
