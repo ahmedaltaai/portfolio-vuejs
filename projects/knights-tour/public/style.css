@@ -35,16 +35,16 @@ section {
 
 #start,
 #win {
-  width: 40vmin;
-  height: 50vmin;
+  width: 15em;
+  height: 15em;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 9;
+  z-index: 1;
 
-  padding: 3vmin 6vmin 19vmin 6vmin;
-  font-size: 3vmin;
+  padding: 1em;
+  font-size: 1.2em;
   background-color: bisque;
   border: 1px solid #050a00;
 }
@@ -57,10 +57,10 @@ section {
 #start button {
   display: block;
   margin: auto;
-  width: 25vmin;
-  height: 12vmin;
-  font-size: 2vmin;
-  text-align: center;
+}
+
+#instruction span {
+  margin-bottom: 0.5em;
 }
 
 aside {
@@ -71,7 +71,7 @@ aside {
 
   display: none;
 
-  z-index: 99;
+  z-index: 1;
   width: 21.5em;
 
   justify-content: space-between;
@@ -97,9 +97,10 @@ aside button:hover {
 
 #win button,
 #start button {
-  font-size: 7vmin;
-  text-align: center;
-  padding: 0;
+  padding: 0.5em 1em;
+  margin-top: 1em;
+  font-size: 1em;
+  cursor: pointer;
 }
 
 div {
@@ -152,13 +153,14 @@ div[onclick] {
 
     display: none;
 
-    z-index: 99;
     width: 15.7em;
 
-    justify-content: space-between;
-    align-items: center;
-
-    color: white;
     font-size: 1.4em;
+  }
+
+  #start,
+  #win {
+    width: 15em;
+    height: 15em;
   }
 }
