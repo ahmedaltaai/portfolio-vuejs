@@ -1,0 +1,280 @@
+<html lang="en">
+
+<head>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knights Tour</title>
+</head>
+
+<body>
+    <div id="start">
+        <p id="instruction">
+            Click on a field move the Knight. The Knight moves by
+            the rules of regular Chess. The knight will turn the color of the field to red when moved there. 
+            Your goal is to paint the entire board red.
+        </p>
+        <button onclick="newtry()">Start</button>
+    </div>
+
+    <div id="win">
+        <p>You have won with w moves.</p>
+
+    </div>
+
+    <article>
+      <section class="bg">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+        <div class="fake"></div>
+
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+        <div class="fake"></div>
+
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+        <div class="fake"></div>
+
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+        <div class="fake"></div>
+
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+        <div class="fake"></div>
+
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+        <div class="fake"></div>
+
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+        <div class="fake"></div>
+
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+        <div class="fake"></div>
+      </section>
+
+      <section id="red">
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+        <div class="paint"></div>
+      </section>
+
+      <section id="fakeboard">
+        <div id="knight">
+            <img src="./knight.svg">
+        </div>
+      </section>
+
+      <section id="board">
+        <div class="play" onclick="myMove(0)"></div>
+        <div class="play" onclick="myMove(1)"></div>
+        <div class="play" onclick="myMove(2)"></div>
+        <div class="play" onclick="myMove(3)"></div>
+        <div class="play" onclick="myMove(4)"></div>
+        <div class="play" onclick="myMove(5)"></div>
+        <div class="play" onclick="myMove(6)"></div>
+        <div class="play" onclick="myMove(7)"></div>
+
+        <div class="play" onclick="myMove(8)"></div>
+        <div class="play" onclick="myMove(9)"></div>
+        <div class="play" onclick="myMove(10)"></div>
+        <div class="play" onclick="myMove(11)"></div>
+        <div class="play" onclick="myMove(12)"></div>
+        <div class="play" onclick="myMove(13)"></div>
+        <div class="play" onclick="myMove(14)"></div>
+        <div class="play" onclick="myMove(15)"></div>
+
+        <div class="play" onclick="myMove(16)"></div>
+        <div class="play" onclick="myMove(17)"></div>
+        <div class="play" onclick="myMove(18)"></div>
+        <div class="play" onclick="myMove(19)"></div>
+        <div class="play" onclick="myMove(20)"></div>
+        <div class="play" onclick="myMove(21)"></div>
+        <div class="play" onclick="myMove(22)"></div>
+        <div class="play" onclick="myMove(23)"></div>
+
+        <div class="play" onclick="myMove(24)"></div>
+        <div class="play" onclick="myMove(25)"></div>
+        <div class="play" onclick="myMove(26)"></div>
+        <div class="play" onclick="myMove(27)"></div>
+        <div class="play" onclick="myMove(28)"></div>
+        <div class="play" onclick="myMove(29)"></div>
+        <div class="play" onclick="myMove(30)"></div>
+        <div class="play" onclick="myMove(31)"></div>
+
+        <div class="play" onclick="myMove(32)"></div>
+        <div class="play" onclick="myMove(33)"></div>
+        <div class="play" onclick="myMove(34)"></div>
+        <div class="play" onclick="myMove(35)"></div>
+        <div class="play" onclick="myMove(36)"></div>
+        <div class="play" onclick="myMove(37)"></div>
+        <div class="play" onclick="myMove(38)"></div>
+        <div class="play" onclick="myMove(39)"></div>
+
+        <div class="play" onclick="myMove(40)"></div>
+        <div class="play" onclick="myMove(41)"></div>
+        <div class="play" onclick="myMove(42)"></div>
+        <div class="play" onclick="myMove(43)"></div>
+        <div class="play" onclick="myMove(44)"></div>
+        <div class="play" onclick="myMove(45)"></div>
+        <div class="play" onclick="myMove(46)"></div>
+        <div class="play" onclick="myMove(47)"></div>
+
+        <div class="play" onclick="myMove(48)"></div>
+        <div class="play" onclick="myMove(49)"></div>
+        <div class="play" onclick="myMove(50)"></div>
+        <div class="play" onclick="myMove(51)"></div>
+        <div class="play" onclick="myMove(52)"></div>
+        <div class="play" onclick="myMove(53)"></div>
+        <div class="play" onclick="myMove(54)"></div>
+        <div class="play" onclick="myMove(55)"></div>
+
+        <div class="play" onclick="myMove(56)"></div>
+        <div class="play" onclick="myMove(57)"></div>
+        <div class="play" onclick="myMove(58)"></div>
+        <div class="play" onclick="myMove(59)"></div>
+        <div class="play" onclick="myMove(60)"></div>
+        <div class="play" onclick="myMove(61)"></div>
+        <div class="play" onclick="myMove(62)"></div>
+        <div class="play" onclick="myMove(63)"></div>
+      </section>
+    </article>
+
+    <aside id="aside">
+        <p id="moves"></p>
+        <button id="reset" onclick="newtry()">Reset</button>
+    </aside>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>

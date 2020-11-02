@@ -11,6 +11,9 @@ const mainWebsite = express.static(path.join(__dirname, '/dist'))
 // import projects
 app.use(vhost('willhaben.ahmedaltaai.com', require('./projects/willhaben/app')))
 app.use(vhost('microsoft.ahmedaltaai.com', require('./projects/microsoft/app')))
+app.use(
+  vhost('knights-tour.ahmedaltaai.com', require('./projects/knights-tour/app'))
+)
 app.use(vhost('rps.ahmedaltaai.com', require('./projects/rps/app')))
 app.use(vhost('guf.ahmedaltaai.com', require('./projects/guf/app')))
 
